@@ -1,0 +1,24 @@
+---
+title: push
+description: Stages all changes in the current directory, commits and pushes.
+---
+
+### Usage
+```sh
+gitzeug push [OPTIONS]
+```
+
+#### Options
+- `-a`, `--ai` &nbsp;&nbsp;&nbsp;&nbsp;Generates a commit message using AI
+- `-m`, `--message <CMTMSG>` &nbsp;&nbsp;&nbsp;&nbsp;Commit message [default: ]
+
+### Example
+#### Push changes with a commit message
+```sh
+gitzeug push -m "This is a commit message"
+```
+
+#### Push changes with AI-generated commit message
+```sh
+gitzeug push --ai
+```

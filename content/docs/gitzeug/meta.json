@@ -1,0 +1,6 @@
+{
+    "title": "Gitzeug",
+    "pages": ["index", "---Setup---","installation", "configuration", "---Usage---", "commands"],
+    "icon": "Wrench",
+    "root": true
+}

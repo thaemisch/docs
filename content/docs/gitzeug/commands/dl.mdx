@@ -1,0 +1,32 @@
+---
+title: dl
+description: Downloads the specified directories and files from a git repo.
+---
+### Usage
+```sh
+gitzeug dl -u <URL> -o <PATH> -f <FILES>
+```
+#### Options
+ - `-u`, `--url <URL>` &nbsp;&nbsp;&nbsp;&nbsp;The URL of the git repo.
+ - `-o`, `--output <PATH>` &nbsp;&nbsp;&nbsp;&nbsp;The ouput/destination directory.
+ - `-f`, `--files <FILES>` &nbsp;&nbsp;&nbsp;&nbsp;Directories and files to download.
+
+### Example
+#### Download the `src` directory and `Cargo.toml` file from the gitzeug repository
+```sh
+gitzeug dl -u https://github.com/thaemisch/gitzeug.git -o . -f src,Cargo.toml && ls -la
+```
+```txt
+Cloning into '/tmp/.tmpsaiTq6'...
+remote: Enumerating objects: 15, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 15 (delta 0), reused 6 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (15/15), 31.93 KiB | 883.00 KiB/s, done.
+Your branch is up to date with 'origin/main'.
+total 16
+drwxr-xr-x  3 tim users 4096 25. Jun 10:48 .
+drwx------ 51 tim users 4096 25. Jun 10:47 ..
+-rw-r--r--  1 tim users  423 25. Jun 10:48 Cargo.toml
+drwxr-xr-x  2 tim users 4096 25. Jun 10:48 src
+```

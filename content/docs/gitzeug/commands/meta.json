@@ -1,0 +1,5 @@
+{
+    "title": "Commands",
+    "pages": ["help", "config", "ai", "browse", "dl", "push", "squash"],
+    "icon": "Terminal"
+}

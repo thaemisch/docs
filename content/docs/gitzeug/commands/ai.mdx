@@ -1,0 +1,30 @@
+---
+title: ai
+description: Utility for AI actions in gitzeug.
+---
+
+### Usage
+```sh
+gitzeug ai [OPTIONS]
+```
+
+#### Options
+- `-m`, `--message` &nbsp;&nbsp;&nbsp;&nbsp;Generates a commit message using AI
+- `-l`, `--limits` &nbsp;&nbsp;&nbsp;&nbsp;Check limits on API usage
+
+### Example
+#### Generate a commit message using AI
+```sh
+gitzeug ai -m
+```
+```txt
+Generated commit message: Fix: Correctly handle missing values in get_dummies
+```
+
+#### Check API usage limits
+```sh
+gitzeug ai -l
+```
+```json
+{"data":{"label":"sk-or-v1-f19...ecb","limit":1,"usage":0,"is_provisioning_key":false,"limit_remaining":1,"is_free_tier":false,"rate_limit":{"requests":20,"interval":"10s"}}}
+```

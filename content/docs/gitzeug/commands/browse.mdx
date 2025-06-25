@@ -1,0 +1,37 @@
+---
+title: browse
+description: Shows the file tree for the git repo.
+---
+### Usage
+```sh
+gitzeug browse <URL>
+```
+#### Options
+ - `<URL>` &nbsp;&nbsp;&nbsp;&nbsp;The URL of the git repo.
+
+### Example
+#### Browse the file tree of the gitzeug repository
+```sh
+gitzeug browse https://github.com/thaemisch/gitzeug.git
+```
+```txt
+Cloning into '/tmp/.tmpJQ4A8M'...
+remote: Enumerating objects: 15, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 15 (delta 0), reused 6 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (15/15), 31.93 KiB | 778.00 KiB/s, done.
+├── .gitignore
+├── LICENSE
+├── result
+├── src
+│   ├── git.rs
+│   ├── main.rs
+│   ├── model.rs
+│   └── utils.rs
+├── Cargo.lock
+├── Cargo.toml
+├── README.md
+├── flake.nix
+└── shell.nix
+```
