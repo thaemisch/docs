@@ -11,7 +11,7 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <>
-        thaemisch's docs
+        thaemisch&apos;s docs
       </>
     ),
   },
