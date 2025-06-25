@@ -12,6 +12,10 @@ gitzeug push [OPTIONS]
 - `-a`, `--ai` &nbsp;&nbsp;&nbsp;&nbsp;Generates a commit message using AI
 - `-m`, `--message <CMTMSG>` &nbsp;&nbsp;&nbsp;&nbsp;Commit message [default: ]
 
+#### AI Usage
+When using the `--ai` option, gitzeug will generate a commit message using an AI model configured in your [configuration](../configuration/ai-cmsg) file.
+Before pushing and committing, you will first be asked to confirm the generated commit message. If you do not confirm, you will be prompted to enter a custom commit message. You can also `ctrl+c` to cancel the push operation at this point.if you feel like retrying.
+
 ### Example
 #### Push changes with a commit message
 ```sh
@@ -21,4 +25,11 @@ gitzeug push -m "This is a commit message"
 #### Push changes with AI-generated commit message
 ```sh
 gitzeug push --ai
+```
+```txt
+Generated commit message: Fix: Correctly handle missing environment variables
+
+Do you want to use the generated commit message? (y/n):
+n
+Enter your commit message:
 ```

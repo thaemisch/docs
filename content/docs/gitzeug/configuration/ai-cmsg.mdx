@@ -1,0 +1,44 @@
+---
+title: AI Commit Messages
+---
+The config file generated from running `gitzeug config` contains a section for AI commit messages:
+```toml
+[ai_cmsg]
+key = ""
+model = ""
+msg = "Generate a short, concise commit message for the following diff. Your answer should contain the commit message only, no further output."
+```
+
+### Key
+This is the API key for [OpenRouter](https://openrouter.ai/), which is required to use the AI commit message feature. You can obtain a free key by signing up on their website and create one in the [settings](https://openrouter.ai/settings/keys). Once you have the key, paste it into the `key` field in the config file.
+
+### Model
+This is the model that will be used to generate the commit messages. You can choose from a variety of [models](https://openrouter.ai/models) available on OpenRouter. Here you can filter for your preferences, such as size, speed, and cost. The model you choose will affect the quality and speed of the generated commit messages.
+
+#### My Recommendation
+Look for a model that has:
+- **Sufficient context length**: The model should be able to handle the size of your diffs.
+- **Low latency**: The model should respond quickly to avoid delays in your workflow.
+- **Cost**: Some models are more expensive than others, so consider your budget. There are plenty of free models available that work well for generating commit messages.
+
+I personally reccomend using `google/gemini-2.0-flash-exp:free` as it is fast, free, and has a context length of 1.05M.
+
+### Message
+This is the prompt that will be sent to the AI model to generate the commit message. The default message is designed to be concise and focused on generating a short commit message based on the provided diff. You can customize this message to suit your needs, but keep in mind that it should be clear and specific to get the best results from the AI model.
+
+### OpenRouter API rate limits for free models
+Depending on the state of your account, different API limits apply. Check [their docs](https://openrouter.ai/docs/api-reference/limits) for the most up-to-date information.
+If you just created your account and have not yet added credits, you will have a free account.
+If you have added at least 10 credits, you will have a paid account.
+
+1. Case: Free account
+   - **Rate limit**: 20 requests per minute
+   - **Daily limit**: 50 requests per day
+
+2. Case: Paid account
+   - **Rate limit**: 20 requests per minute
+   - **Daily limit**: 1000 requests per day
+
+You can check your current account status using `gitzeug ai -l`.
+
+**Important**: If your [account balance](https://openrouter.ai/settings/credits) is negative, even if it says `-$0,00`, most if not all of your requests will be rejected with a `402 Payment Required` error. This could, for example, happen if you just 'tested' a paid model with a cost of 0.0000001 credits.
