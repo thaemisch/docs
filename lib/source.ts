@@ -5,7 +5,7 @@ import { createElement } from 'react';
 
 // See https://fumadocs.vercel.app/docs/headless/source-api for more info
 export const source = loader({
-  baseUrl: '/docs',
+  baseUrl: '/',
   source: docs.toFumadocsSource(),
   icon(icon) {
     if (!icon) {
